@@ -10,17 +10,17 @@ import {
 import { supabase } from "@/lib/supabaseClient";
 
 interface AuthContextType {
-  user: any;
+  user: unknown;
   loading: boolean;
-  signInWithEmail: (email: string, password: string) => Promise<any>;
-  signUpWithEmail: (email: string, password: string) => Promise<any>;
+  signInWithEmail: (email: string, password: string) => Promise<unknown>;
+  signUpWithEmail: (email: string, password: string) => Promise<unknown>;
   signOut: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<unknown>(null);
   const [loading, setLoading] = useState(true);
 
   // Load initial session

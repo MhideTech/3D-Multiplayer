@@ -16,10 +16,10 @@ export default function LoginPage() {
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (mode === "signin") {
-      const { error } = await signInWithEmail(email, pass); // Removed redundant declaration
+      const { error } = (await signInWithEmail(email, pass)) as { error: unknown }; // Removed redundant declaration
       if (!error) router.push("/dashboard"); // Simplified conditional
     } else {
-      const { error } = await signUpWithEmail(email, pass);
+      const { error } = (await signUpWithEmail(email, pass)) as { error: unknown };
       if (!error) router.push("/dashboard");
     }
   }

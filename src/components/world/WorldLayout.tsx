@@ -3,6 +3,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
 import ProtectedRoute from "../ProtectedRoute";
+import Player from "./Player";
 
 export default function WorldLayout() {
   return (
@@ -21,6 +22,9 @@ export default function WorldLayout() {
             <planeGeometry args={[1000, 1000]} />
             <meshStandardMaterial color="#222" />
           </mesh>
+
+          {/* 🏃‍♂️ Player */}
+          <Player />
 
           {/* 🧭 Camera Controls */}
           <OrbitControls />
